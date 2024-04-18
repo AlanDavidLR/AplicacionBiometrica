@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D8CDCD"
+    android:padding="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="0dp">
+        <!-- ImageView en la parte superior izquierda -->
+
+        <!-- Bienvenido TextView en la parte superior centro -->
+
+        <ImageView
+            android:id="@+id/logoImageView"
+            android:layout_width="79dp"
+            android:layout_height="83dp"
+            android:elevation="10dp"
+            android:src="@drawable/logoumi"
+            android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@id/bienvenidoTextView"
+            app:layout_constraintEnd_toStartOf="@id/guideline"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <!-- Imagen de usuario en el centro -->
+
+        <TextView
+            android:id="@+id/bienvenidoTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:elevation="10dp"
+            android:text="Bienvenido"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.261"
+            app:layout_constraintStart_toEndOf="@id/logoImageView"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Rectángulo con el texto "Inicio de sesión correcto Alan David" -->
+
+        <!-- Guía para alinear correctamente -->
+
+        <ImageView
+            android:id="@+id/usuarioImageView"
+            android:layout_width="159dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="70dp"
+            android:elevation="10dp"
+            android:src="@drawable/foto"
+            app:layout_constraintBottom_toTopOf="@id/inicioSesionTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bienvenidoTextView" />
+
+        <TextView
+            android:id="@+id/inicioSesionTextView"
+            android:layout_width="306dp"
+            android:layout_height="88dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/rectangulo_blanco"
+            android:padding="16dp"
+            android:text="Inicio de sesión correcto Alan David"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias=".495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/usuarioImageView" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="85dp" />
+
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="0dp"
+            android:layout_height="465dp"
+            android:layout_marginStart="-50dp"
+            android:layout_marginTop="-100dp"
+            android:layout_marginEnd="-60dp"
+            android:adjustViewBounds="false"
+            android:baselineAlignBottom="true"
+            android:cropToPadding="false"
+            android:scaleType="matrix"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.485"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/fodo"
+            tools:visibility="visible" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Regresar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/destacadoLayout" />
+
+        <LinearLayout
+            android:id="@+id/destacadoLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageView3">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="16dp"
+                android:text="Lo más destacado"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <FrameLayout
+                android:id="@+id/destacadoRecuadro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imageView3"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="16dp"
+                android:layout_marginTop="16dp"
+                android:background="#F5F5F5"
+                android:padding="16dp">
+
+                <!-- TextView para el título "Lo más destacado" -->
+
+
+                <!-- RecyclerView para mostrar las noticias -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/newsRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="97dp" />
+
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
